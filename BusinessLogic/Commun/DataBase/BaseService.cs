@@ -13,8 +13,6 @@ namespace BusinessLogic.Commun.DataBase
 
         private readonly IBaseModel<T> baseService;
 
-
-
         public BaseService(IBaseModel<T> baseService)
         {
             this.baseService = baseService;
