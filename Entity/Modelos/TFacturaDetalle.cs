@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Entity.Modelos
 {
     [Table("FACTURADETALLE")]
-    public class TFacturaFetalle
+    public class TFacturaDetalle
     {
         [Key]
         public int codigo { get; set; }
