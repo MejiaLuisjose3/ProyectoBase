@@ -10,11 +10,15 @@ namespace DataLocal.Context
 {
     public class dbContext : DbContext
     {
-        public dbContext() : base("EstudiarContext")
+        public dbContext() : base("Facturacion")
         {
             
         }
 
-        public DbSet<CUsuario> Usuario { get; set; }
+        public DbSet<ITccproductoscliente> ITccproductoscliente { get; set; }
+        public DbSet<TClientes> TClientes { get; set; }
+        public DbSet<Tfactura> Tfactura { get; set; }
+        public DbSet<TFacturaDetalle> TFacturaDetalle { get; set; }
+        public DbSet<TProductos> TProductos { get; set; }
     }
 }

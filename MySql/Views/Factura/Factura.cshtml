@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Factura";
+}
+
+<h2>Factura</h2>
+
+<div>
+    <fieldset>
+        <div>
+            <label for="Codigo">Codigo:</label>
+            <input type="text" class="form-control" name="Codigo" value="" />
+        </div>
+        <div>
+            <label for="Precio">Precio:</label>
+            <input type="text" class="form-control" name="Precio" value="" />
+        </div>
+        <div>
+            <label for="Cantidad">Cantidad:</label>
+            <input type="text" class="form-control" name="Cantidad" value="" />
+        </div>
+        <div>
+            <label>&nbsp;</label>
+            <br />
+
+            <input type="button" id="boton" value="Submit" class="btn btn-secondary" />
+        </div>
+    </fieldset>
+</div>
+
+<script src="~/scripts/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    // assuming you're using jQuery
+    $("#boton").click(function (event) {
+        var data = {
+            "valor": event
+        }
+
+        console.log(data);
+        /*$.ajax({
+            type: "POST",
+            url: "/Factura/Login",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                $("#divPartialView").empty();
+                $("#divPartialView").append(msg);
+            },
+            error: () => { }
+        });*/
+    });
+</script>
+
+
+<script src="~/scripts/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+        console.log(GetEmployeeData());
+    });
+    function GetEmployeeData() {
+        $.get('/Index/EmployeeData', {}, function (data) {
+            var tblEmployee = $("#tblEmployee");
+            $.each(data, function (index, item) {
+                var tr = $("<tr></tr>");
+                tr.html(("<td>" + item.EmployeeId + "</td>")
+                    + " " + ("<td>" + item.FirstName + "</td>")
+                    + " " + ("<td>" + item.LastName + "</td>")
+                    + " " + ("<td>" + item.Email + "</td>")
+                    + " " + ("<td>" + item.Salary + "</td>")
+                    + " " + ("<td>" + item.Company + "</td>")
+                    + " " + ("<td>" + item.Dept + "</td>"));
+                tblEmployee.append(tr);
+            });
+        });
+    }
+</script>

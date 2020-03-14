@@ -63,6 +63,11 @@
   <ItemGroup>
     <Compile Include="Common\IGenericClass.cs" />
     <Compile Include="Modelos\CUsuario.cs" />
+    <Compile Include="Modelos\ITccproductoscliente.cs" />
+    <Compile Include="Modelos\TClientes.cs" />
+    <Compile Include="Modelos\Tfactura.cs" />
+    <Compile Include="Modelos\TFacturaDetalle.cs" />
+    <Compile Include="Modelos\TProductos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
